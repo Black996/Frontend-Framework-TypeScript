@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "axios": "^0.21.1",
+    "json-server": "^0.16.3",
+    "parcel-bundler": "^1.12.5"
+  },
+  "scripts": {
+    "start:db": "npx json-server -w db.json",
+    "start:parcel": "npx parcel index.html",
+    "start": "concurrently \"npm run start:db\" \"npm run start:parcel arg\""
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.0",
+    "typescript": "^4.3.5"
+  }
+}
