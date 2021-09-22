@@ -27,6 +27,13 @@ export class Model<T extends HasId> {
     private sync: Sync<T>
   ) {}
 
+  // Another way to define the passthrough getters on, trigger and get,
+  // which is only valid when we define the constructor values in the parameters place
+
+  // on = this.events.on;
+  // trigger = this.events.trigger;
+  // get = this.attributes.get;
+
   get on() {
     return this.events.on;
   }
