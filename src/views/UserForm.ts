@@ -22,9 +22,12 @@ export class UserForm {
 
   onSetName(): void {
     const nameInputEl = this.parent.querySelector("input");
-    const name = nameInputEl.value;
 
-    this.model.set({ name });
+    if (nameInputEl) {
+      const name = nameInputEl.value;
+
+      this.model.set({ name });
+    }
   }
 
   template(): string {
