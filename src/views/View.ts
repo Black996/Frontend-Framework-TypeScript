@@ -10,12 +10,15 @@ export abstract class View<T extends Model<K>, K> {
     this.bindModel();
   }
 
+  abstract template(): string;
+
   bindModel(): void {
     this.model.on("change", () => this.render());
   }
 
-  abstract eventsMap(): EventsMap;
-  abstract template(): string;
+  eventsMap(): EventsMap {
+    return {};
+  }
 
   bindEvents(fragment: DocumentFragment): void {
     const eventsMap = this.eventsMap();
