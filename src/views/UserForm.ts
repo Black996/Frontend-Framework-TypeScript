@@ -1,11 +1,11 @@
-import { User } from "../models/User";
+import { User, UserProps } from "../models/User";
 import { View } from "../views/View";
 
 interface EventsMap {
   [key: string]: () => void;
 }
 
-export class UserForm extends View {
+export class UserForm extends View<User, UserProps> {
   eventsMap(): EventsMap {
     return {
       "click:#set-random-age": this.onSetRandomAge,
