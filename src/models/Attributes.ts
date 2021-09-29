@@ -6,7 +6,7 @@ export class Attributes<T> {
   };
 
   set(newVal: T): void {
-    Object.assign(this.data, newVal);
+    newVal = this.data;
   }
 
   getAll(): T {

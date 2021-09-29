@@ -1,16 +1,16 @@
+import { UserList } from "./views/UserList";
 import { User } from "./models/User";
-import { UserEdit } from "./views/UserEdit";
 
-const root = document.getElementById("root");
+const users = User.buildUserCollection();
 
-if (root) {
-  const userEdit = new UserEdit(
-    root,
-    User.buildUser({ name: "HEYYOU", age: 20 })
-  );
+users.on("change", () => {
+  console.log("triggered");
+  const root = document.getElementById("root");
+  console.log(root);
 
-  userEdit.render();
-  console.log(userEdit);
-} else {
-  throw new Error("Root element not found");
-}
+  if (root) {
+    new UserList(root, users).render();
+  }
+});
+
+users.fetch();
