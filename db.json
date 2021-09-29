@@ -1,9 +1,6 @@
 {
   "users": [
     {
-      "id": 1
-    },
-    {
       "id": 2,
       "name": "newer name",
       "age": 0
