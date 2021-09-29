@@ -1,9 +1,5 @@
 import { User, UserProps } from "../models/User";
-import { View } from "../views/View";
-
-interface EventsMap {
-  [key: string]: () => void;
-}
+import { View, EventsMap } from "../views/View";
 
 export class UserForm extends View<User, UserProps> {
   eventsMap(): EventsMap {
